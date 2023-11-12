@@ -16,7 +16,7 @@ app.use(session({
 }));
 
 app.use(cP());
-app.use(express.static("styles"));
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(bP.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
