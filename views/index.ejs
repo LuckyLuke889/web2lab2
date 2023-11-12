@@ -7,7 +7,7 @@
     <div class="App">
         <div class = "colorstrip">
           <button class = "chooseAttack">XSS Attack</button>
-          <button class = "chooseAttack" onclick="gotoBAC()">Broken Access Control</button>
+          <button class = "chooseAttack" onclick="gotoSDE()">Sensitive Data Exposure</button>
         </div>
         <h1>XSS Attack</h1>
           <section id="user-input">
@@ -31,8 +31,8 @@
 
 <script>
 
-function gotoBAC() {
-    window.location.href = "/brokenAccessControl";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+function gotoSDE() {
+    window.location.href = "/sensitiveDataExposure";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
 }
 
 

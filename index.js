@@ -22,8 +22,8 @@ app.use(bP.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
-app.get('/brokenAccessControl', (req, res) => {
-    res.render('brokenAccessControl',{user: req.session.user});
+app.get('/sensitiveDataExposure', (req, res) => {
+    res.render('sensitiveDataExposure',{user: req.session.user});
 });
 
 app.get('/',guard, (req, res) => {

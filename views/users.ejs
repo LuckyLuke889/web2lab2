@@ -6,7 +6,7 @@
 <div class="App">
     <div class = "colorstrip">
         <button class = "chooseAttack" onclick="gotoXSS()">XSS Attack</button>
-        <button class = "chooseAttack" onclick="gotoBAC()">Broken Access Control</button>
+        <button class = "chooseAttack" onclick="gotoSDE()">Sensitive Data Exposure</button>
     </div>
     <section>
       <form>
@@ -39,8 +39,8 @@ function gotoXSS() {
     window.location.href = "/";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
 }
 
-function gotoBAC(){
-    window.location.href = "/brokenAccessControl";
+function gotoSDE(){
+    window.location.href = "/sensitiveDataExposure";
 }
 </script>
 
