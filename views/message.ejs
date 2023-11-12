@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+<div class="App">
+    <div class = "colorstrip">
+      <button class = "chooseAttack" onclick="redirectToHome()">XSS Attack</button>
+      <button class = "chooseAttack" onclick="gotoBAC()">Broken Access Control</button>
+    </div>
+    <section id="user-input">
+        <h2>Your message:</h2>     
+            <% if (options === "opcija1") { %>
+                <%= message %></>
+            <% } else { %>
+                <p class="rezultat"><%- message %></p>
+            <% } %>
+    </section>
+
+
+<script>
+    function redirectToHome() {
+        window.location.href = "/";    //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+    }
+
+    function gotoBAC() {
+        window.location.href = "/brokenAccessControl";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+    }
+</script>
+
+</body>
+</html>

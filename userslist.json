@@ -1,0 +1,20 @@
+[
+  {
+    "username": "korisnik",
+    "password": "korisnik123",
+    "adress": "Palm Street 3",
+    "email": "korisnik@gmail.com"
+  },
+  {
+    "username": "pero",
+    "password": "pero123",
+    "adress": "Apple Street 5",
+    "email": "pero@gmail.com"
+  },
+  {
+    "username": "ana",
+    "password": "ana123",
+    "adress": "Abbey Road 21",
+    "email": "ana@gmail.com"
+  }
+]

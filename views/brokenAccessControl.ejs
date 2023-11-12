@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+<div class="App">
+    <div class = "colorstrip">
+        <button class = "chooseAttack" onclick="gotoXSS()">XSS Attack</button>
+        <button class = "chooseAttack">Broken Access Control</button>
+    </div>
+    <h1>Broken Access Control</h1>
+    <div class="section-wrapper">
+        <section id="user-input">
+        <form form form method="GET" action="/users" id="showUsersForm">
+            <h2>Show users</h2>
+            <div class="form-control" id ="form-control">
+            <select name="options" id = "options">
+                <option value="opcija1">Turn on safe option</option>
+                <option value="opcija2">Turn off safe option</option>
+            </select>
+            </div>
+            <button class="subBtn" type="submit" name="showbtn" id="showbtn">Show users</button>
+        </form>
+        </section>
+    </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+        </ul>
+    </nav>
+</div>
+
+<script>
+function gotoXSS() {
+    window.location.href = "/";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+}
+
+</script>
+
+</body>
+</html>

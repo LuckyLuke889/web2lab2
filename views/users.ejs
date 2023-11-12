@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+<div class="App">
+    <div class = "colorstrip">
+        <button class = "chooseAttack" onclick="gotoXSS()">XSS Attack</button>
+        <button class = "chooseAttack" onclick="gotoBAC()">Broken Access Control</button>
+    </div>
+    <section>
+      <form>
+        <div class="form-control">
+            <h2>List of users:</h2>
+            <% if (options === "opcija1") { %>
+                <% for(user of userData){ %>
+                    <section id="user-input">
+                        Username:<%= user.username %></><br>
+                        Email:<%= user.email %></>
+                    </section>
+                <% } %>
+            <% } else { %>
+                <% for(user of userData){ %>
+                    <section id="user-input">
+                        Username:<%= user.username %></><br>
+                        Email:<%= user.email %></><br>
+                        Password:<%= user.password %></><br>
+                        Adress:<%= user.adress %></>
+                    </section>
+                <% } %>
+            <% } %>
+      </select>
+        </div>
+      </form>
+    </section>
+</div>
+<script>
+function gotoXSS() {
+    window.location.href = "/";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+}
+
+function gotoBAC(){
+    window.location.href = "/brokenAccessControl";
+}
+</script>
+
+</body>
+</html>

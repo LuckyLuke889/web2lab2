@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/index.css">
+    </head>
+    <body>
+    <div class="App">
+        <div class = "colorstrip">
+          <button class = "chooseAttack">XSS Attack</button>
+          <button class = "chooseAttack" onclick="gotoBAC()">Broken Access Control</button>
+        </div>
+        <h1>XSS Attack</h1>
+          <section id="user-input">
+      <form method="GET" action="/message" id="myForm">
+        <div class="form-control">
+        <select name="options" id = "options">
+        <option value="opcija1">Turn on safe option</option>
+        <option value="opcija2">Turn off safe option</option>
+      </select>
+        </div>
+        <div class="form-control">
+          <label for="user-message" id = "label">Write a message</label>
+          <textarea autoComplete="off" name="message" id="message"></textarea>
+          <div id="alertMessage" style="color: red;"></div>
+        </div>
+        <button class="subBtn" type="submit">Send Message</button>
+      </form>
+    </section>
+    </div>    
+</body> 
+
+<script>
+
+function gotoBAC() {
+    window.location.href = "/brokenAccessControl";  //Ako u deployu nece dobro navigirat, probaj tu nesto drugo!
+}
+
+
+
+    document.getElementById("myForm").addEventListener("submit", (e) => {
+        var securityVal = document.getElementById("options").value;
+
+        if (securityVal === "opcija1") {
+            var userInput = document.getElementById("message").value;
+            const forbidden =  [".", "<", ">", "%", "=", ","]
+            //var forbiddenCharacters = /[.,<>%=]/
+            let isForbidden = false
+
+            for(character of userInput){
+              if(forbidden.includes(character)){
+                isForbidden = true
+                break
+              }
+            }
+
+            if (isForbidden) {
+                //alert("Upit sadrži zabranjene znakove.");
+                let alertMessage = document.getElementById("alertMessage")
+                alertMessage.textContent = "Your input contains forbidden characters!"
+                e.preventDefault();
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
